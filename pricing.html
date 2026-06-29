@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Phoenix Vortex</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Phoenix Vortex - Affordable and modern web development services for businesses, portfolios, and online stores.">
+<meta name="keywords" content="web developer, freelancer, websites, Phoenix Vortex, affordable websites">
+<meta name="author" content="Phoenix Vortex">
+<meta name="description" content="Phoenix Vortex - Professional web development agency building modern, fast, and SEO optimized websites for businesses and startups.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+</head>
+<div id="chatbot">
+
+    <div id="chat-header">Phoenix AI</div>
+
+    <div id="chat-box"></div>
+
+    <input id="chat-input" placeholder="Ask something...">
+
+</div>
+
+<button id="chat-toggle">💬</button>
+<body>
+<div id="loader">
+    <div class="spinner"></div>
+    <h2>Phoenix Vortex</h2>
+</div>
+<header>
+    <nav class="navbar">
+        <div class="logo">Phoenix Vortex</div>
+
+        <div class="burger" id="burger">
+            ☰
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <li><a href="testimonials.html">Testimonials</a></li>
+<li><a href="faq.html">FAQ</a></li>
+    </nav>
+</header>
+
+<section class="services">
+
+    <h1 style="text-align:center; margin-bottom:40px;">
+        Website Packages
+    </h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>Starter</h2>
+            <h1>$99</h1>
+
+            <p>✓ 1-3 Pages</p>
+            <p>✓ Mobile Friendly</p>
+            <p>✓ Contact Form</p>
+            <p>✓ Basic SEO</p>
+
+            <br>
+
+            <a href="contact.html" class="btn">
+                Get Started
+            </a>
+            <div id="paypal-button-starter"></div>
+        </div>
+
+        <div class="card">
+            <h2>Business</h2>
+            <h1>$199</h1>
+
+            <p>✓ Up to 7 Pages</p>
+            <p>✓ Responsive Design</p>
+            <p>✓ Animations</p>
+            <p>✓ SEO Optimization</p>
+
+            <br>
+
+            <a href="contact.html" class="btn">
+                Get Started
+            </a>
+            <div id="paypal-button-business"></div>
+        </div>
+
+        <div class="card">
+            <h2>Premium</h2>
+            <h1>$399+</h1>
+
+            <p>✓ Custom Website</p>
+            <p>✓ Advanced Features</p>
+            <p>✓ Fast Performance</p>
+            <p>✓ Full Support</p>
+
+            <br>
+
+            <a href="contact.html" class="btn">
+                Get Started
+            </a>
+            <div id="paypal-button-premium"></div>
+        </div>
+
+    </div>
+
+</section>
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+            <h3>Phoenix Vortex</h3>
+            <p>
+                Professional, modern and affordable
+                website development.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About</a></p>
+            <p><a href="services.html">Services</a></p>
+            <p><a href="portfolio.html">Portfolio</a></p>
+            <p><a href="pricing.html">Pricing</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+
+            <p>
+                📧 Darylmt2009@gmail.com
+            </p>
+
+            <p>
+                💬 +27 73 486 1117
+            </p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 Phoenix Vortex. All rights reserved.
+    </p>
+
+</footer>
+<a href="https://wa.me/27734861117"
+class="floating-whatsapp"
+target="_blank">
+💬 Let’s Talk
+</a>
+<script src="js/script.js"></script>
+<script>
+paypal.Buttons({
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: { value: '99.00' }
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            alert('Payment successful! Thank you ' + details.payer.name.given_name);
+        });
+    }
+}).render('#paypal-button-starter');
+</script>
+</body>
+</html>
